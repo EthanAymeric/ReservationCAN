@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8" />
+	<title>CAN - Equipage</title>
+	<link rel="stylesheet" href="css/css1.css">	
+</head>
+<body>
+	<div id="home">
+		<header id="sidebar">
+				
+					<div class="menuburger" onclick="menuOuvert()">
+						<div class="barrehaut"></div>
+						<div class="barremilieu"></div>
+						<div class="barrebas"></div>
+					</div>
+					<nav>
+						<ul>
+							<div class="logo">
+								<img src="img/CAN1.png" alt="LogoCAN" width="300">
+							</div>
+							<li><a class="index" href="index.html">Accueil</a></li>
+							<li><a class="index" href="cartesdembarquement.html">Cartes d'embarquement</a></li>
+							<li><a class="index" href="facture.html">Facture</a></li>
+							<li><a class="index" href="tableaudebord.html">Tableau de bord</a></li>
+							<li><a class="index" href="statistiques.html">Statistiques</a></li>
+							<li><a class="index" href="equipage.html">Equipage</a></li>
+						</ul>
+					</nav>
+					
+				<nav class="menu">
+					
+				</nav>	
+		</header>
+	</div>
+	<img src="img/header2.png" alt="ferry" width=100%>
+	<main>
+		<br>
+		<header>
+				<h1>L'équipage</h1>
+		</header>
+		<br>
+		<div id="equipage">
+			<img src="img/equipage.png" alt="equipage" width=80%>
+			<img id="gifConfettis" src="img/confetti2.gif" alt="Confettis" width:100%;">
+		</div>
+			
+							
+	</main>
+	
+	<footer>
+		Compagnie Alsacienne de Navigation - 72 Route du Rhin - 67411 Illkirch Cedex
+	</footer>
+	<script>
+        function menuOuvert() {
+        document.getElementById('sidebar').classList.toggle("open-sidebar");
+        }
+    </script>
+
+</body>
+</html>

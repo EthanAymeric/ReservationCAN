@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8" />
+	<title>CAN - Page d'accueil</title>
+	<link rel="stylesheet" href="css/css1.css">	
+</head>
+<body>
+	<div id="home">
+		<header id="sidebar">
+				
+					<div class="menuburger" onclick="menuOuvert()">
+						<div class="barrehaut"></div>
+						<div class="barremilieu"></div>
+						<div class="barrebas"></div>
+					</div>
+					<nav>
+						<ul>
+							<div class="logo">
+								<img src="img/CAN1.png" alt="LogoCAN" width="300">
+							</div>
+							<li><a class="index" href="index.html">Accueil</a></li>
+							<li><a class="index" href="cartesdembarquement.html">Cartes d'embarquement</a></li>
+							<li><a class="index" href="facture.html">Facture</a></li>
+							<li><a class="index" href="tableaudebord.html">Tableau de bord</a></li>
+							<li><a class="index" href="statistiques.html">Statistiques</a></li>
+							<li><a class="index" href="equipage.html">Equipage</a></li>
+						</ul>
+					</nav>
+					
+				<nav class="menu">
+					
+				</nav>	
+		</header>
+	</div>
+	<img src="img/header2.png" alt="ferry" width=100%>
+	<main>
+		<br>
+		<header>
+				<h1>Menu</h1>
+		</header>
+		<section class="blocAccueil">
+			<article class="blocLien">
+				<a class="lienAccueil" href="cartesdembarquement.html">
+					<h2>Cartes d'embarquement
+						<img src="img/cartedembarquement.png" alt="cartedembarquement" width=20%>
+					</h2>
+				</a>
+			</article>
+			<article class="blocLien">
+				<a class="lienAccueil" href="facture.html">
+					<h2>Facture
+						<img src="img/facture.png" alt="facture" width=20%>
+					</h2>
+				</a>
+			</article>
+			<article class="blocLien">
+				<a class="lienAccueil" href="tableaudebord.html">
+					<h2>Tableau de bord
+						<img src="img/tableaudebord.png" alt="tableaudebord" width=20%>
+					</h2>
+				</a>
+			</article>
+			<article class="blocLien">
+				<a class="lienAccueil" href="statistiques.html">
+					<h2>Statistiques
+						<img src="img/statistiques.png" alt="statistiques" width=20%>
+					</h2>
+				</a>
+			</article>
+			<article class="blocLien">
+				<a class="lienAccueil" href="equipage.html">
+					<h2>Equipage
+						<img src="img/equipageindex.png" alt="equipage" width=20%>
+					</h2>
+				</a>
+			</article>
+		</section>		
+	</main>
+	
+	<footer>
+		Compagnie Alsacienne de Navigation - 72 Route du Rhin - 67411 Illkirch Cedex
+	</footer>
+	<script>
+        function menuOuvert() {
+        document.getElementById('sidebar').classList.toggle("open-sidebar");
+        }
+    </script>
+</body>
+</html>

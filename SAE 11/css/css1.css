@@ -1,0 +1,523 @@
+html {
+	background-color: azure; /* couleur de fond */
+	height: 100%; /* hauteur de la page pour utiliser flex sur le body */
+}
+
+* {
+	margin: 0; /* supprime les marges par défaut */
+	padding: 0; /* supprime le padding par défaut */
+	
+	font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body {
+	display: flex; /* flex pour gérer header/main/footer */
+	flex-direction: column;  /* éléments en colonne */
+	height: 100%; /* permet au main de prendre tout l'espace restant */
+}
+
+main {
+	margin: 0px 50px 50px 50px; /* marge autour du main */
+	flex: 1;  /* prend l'espace restant */
+	text-align: center; /* centre le texte du main */
+}
+
+footer,
+h1 {
+	text-align: center; /* centre le texte */
+	color: #0d648d; /* couleur de texte bleue */
+}
+
+/* Menu */
+
+header#sidebar {
+	position: fixed; /*fixer le bouton quand on défile la page*/
+	z-index: 999; /*afficher le bouton en premier plan*/
+	background: linear-gradient(45deg, #0d648d, #299cd1); /* fond dégradé */
+	height: 100%; /* prend toute la hauteur de la fenêtre */
+	min-width: 350px; /* largeur minimale de la sidebar */
+	box-sizing: border-box; /* inclut padding/border dans la taille */
+	text-align: left; /* texte aligné à gauche */
+	transform: translateX(-100%); /* masque la sidebar hors écran par défaut */
+	transition: 0.2s; /* animation pour l'ouverture/fermeture */
+}
+
+header#sidebar.open-sidebar {
+	transform: translateX(0%); /* ramène la sidebar visible */
+}
+
+header#sidebar .menuburger {
+	width: 30px; /* largeur de l'icone burger */
+	height: 25px; /* hauteur de l'icone burger */
+	background: #299cd1; /* fond bleu du burger */
+	cursor: pointer; /* change le curseur au hover */
+	display: flex; /* disposition avec flexbox */
+	flex-direction: column; /* disposition en colonne */
+	align-items: center;  /* centre horizontalement */
+	justify-content: space-around; /* espace entre les barres du menu burger */
+	position: absolute; /* positionnement par rapport à la sidebar */
+	right: -50px; /* décale le bouton à droite de la sidebar */
+	top: 25px; /*descendre le bouton burger*/
+	border-radius: 0px 45px 45px 0px; /* arrondit les coins côté extérieur */
+	padding: 10px; /* espace interne du bouton */
+}
+
+header#sidebar .menuburger .barrehaut,
+header#sidebar .menuburger .barremilieu,
+header#sidebar .menuburger .barrebas {
+	width: 25px; /*largeur des barres burger */
+	height: 3px; /* hauteur des barres burger */
+	background-color: white; /* couleur des barres */
+	border-radius: 30px; /* arrondit les extrémités des barres */
+}
+
+/*Logo sidebar*/ 
+
+div.logo {
+	display: flex; /* disposition avec flexbox */
+	flex-direction: column; /* éléments en colonne */
+	align-items: center; /* centre horizontalement */
+}
+
+div.logo img {
+	margin-top: 25px; /*placer le logo de la sidebar plus bas */
+	margin-bottom: 25px; /*espacer le logo et les puces du menu */
+}
+
+/* Liste menu */
+
+ul {
+	display: flex; /* disposition avec flexbox */
+	flex-direction: column; /* disposition des éléments en colonne */
+	list-style-type: none; /* Retire les puces des listes */
+	padding: 0; /* Pas de padding pour la liste */
+}
+
+li {
+	margin: 0.5rem; /* Espace entre les items de la liste */
+	padding: 1rem 2rem; /* Espacement interne des items */
+	text-align: left; /* Centre le texte dans les items */
+	font-size: 1.1em; /* taille du texte légèrement plus grande */
+}
+
+/* Liens du menu */
+
+a.index:link, a.index:visited {
+	text-decoration: none; /* pas de soulignement */
+	color: #fcc300; /* Texte en orange même quand le lien est visité*/
+	font-weight: bold; /* Texte en gras*/
+}
+
+a.index:hover {
+	color: #fcc300; /* Même couleur quand le lien est survolé */
+	font-weight: bold; /* Texte en gras quand le lien est survolé */
+	transition: 0.2s; /* animation légère */
+	font-size: 1.2em; /* agrandit légèrement le texte */
+}
+
+/*Accueil*/
+
+section.blocAccueil {
+	display: flex; /* disposition avec flexbox */
+	flex-direction: row; /* éléments en ligne */
+	flex-wrap: wrap; /* passage a la ligne des éléments */
+	justify-content: center; /* centre verticalement */
+}
+
+article.blocLien {
+	background-color: #0d648d; /* fond bleu */
+	color: white; /* texte en blanc */
+	border-radius: 25px; /* arrondi des coins */
+	width:40%;  /* largeur de chaque bloc */
+	min-width: 280px;  /* largeur minimale */
+	margin: 10px; /* marge autour des blocs */
+}
+
+article.blocLien:hover {
+	box-shadow: 1px 1px 1px 1px #063a52 ; /* ombre sur le menu */
+	transition: 0.2s; /* animation au passage de la souris */
+}
+
+article.blocLien h2 {
+	display: flex; /* disposition avec flexbox */
+	align-items: center;/* centre verticalement */
+	text-align: center; /* texte centré */
+	justify-content: space-between; /* espace entre texte et image */
+	gap: 20px; /* espace entre les éléments */	
+}
+
+article.blocLien img {
+	width: 40px;  /* largeur de l'icone */
+	height: auto; /* hauteur automatique */
+}
+
+a.lienAccueil {
+    display: block; /* lien sur toute la carte */
+    padding: 30px; /* espace interne des cartes*/
+}
+
+a.lienAccueil:link, a.lienAccueil:visited {
+	text-decoration: none; /* pas de soulignement */
+	color: white; /* texte blanc */
+}
+
+/*Facture*/
+
+header#facture {
+	display: flex; /* disposition avec flexbox */
+	flex-direction: column; /* disposition en colonne */
+}
+
+img#imgFacture {
+	align-self: center; /*image centrée en haut de la facture */
+	width: 200px; /* largeur de l'image fixe */
+}
+
+section.facture {
+	display: flex; /* disposition avec flexbox */
+	flex-direction: column; /* éléments en colonne */
+	align-items: center; /* centre le cadre de la facture */
+}
+
+section#containerFacture.ouvert {
+	border: 0.1rem solid darkblue; /*cadre bleu autour de la facture*/
+	background-color: white; /*fond blanc pour la facture*/
+	margin: 20px; /* marge autour du cadre de la facture */
+	padding: 15px; /* padding pour les bords intérieur de la facture */
+	text-align: left; /* texte à gauche*/
+	width: 600px; /* largeur de facture fixe pour imiter une page A4 */
+}
+
+table.tarif {
+	border-collapse: collapse; /* éviter les doublons de bordures */
+	width: 100%; /* tableau prend tout la largeur de la facture */
+}
+
+table.tarif th,
+td {
+	border: 0.5px solid black; /* bordures noires */
+	border-collapse: collapse; /* éviter les doublons de bordures */
+	text-align: center; /* texte centré */
+}
+
+p.soustotal,
+p.total {
+	text-align: right; /* totaux a droite */
+}
+
+p.total {
+	font-weight: bold;
+}
+
+/*Cartes d'embarquement*/
+
+/*Recherche reservation*/
+
+div.recherche {
+	background-color: #0d648d; /* fond bleu */
+	border-radius: 40px; /* bords arrondis */
+	display: flex; /* disposition avec flexbox */
+	flex-direction: row; /* disposition ligne */
+	padding: 4px; /*barre de recherche */
+}
+
+input {
+	flex: 1; /* chaque élément prend 1/2 de la largeur */
+	text-align: center; /* centre le texte */
+	border-radius: 40px 0px 0px 40px; /* bords arrondis */
+	border: 1px solid #0d648d; /* bordures bleues */
+	padding: 8px; /* espace interne */
+	font-size: medium; /* taille de texte medium */
+}
+
+button#boutonRecherche {
+	flex: 1; /* chaque élément prend 1/2 de la largeur */
+	text-align: center; /* centre le texte */
+	color: white; /* texte blanc */
+	font-weight: bold; /* texte en gras */
+	background-color: transparent;  /* fond transparent */
+	border: none; /* aucune bordure */
+	font-size: medium; /* taille de texte medium */
+	cursor: pointer; /* change le curseur au hover */
+}
+
+button#boutonGauche,
+button#boutonDroite,
+button#boutonAller,
+button#boutonRetour {
+	color: white;  /* fond transparent */
+	font-weight: bold; /* texte en gras */
+	padding: 3px 7px 3px 7px; /* padding interne */
+	border-radius: 30px; /* bords arrondis */
+	background-color: #0d648d; /* fond bleu */
+	border: 1px solid #0d648d; /* bordures bleues */
+	font-size: large; /* taille du texte large */
+	cursor: pointer; /* change le curseur au hover */
+}
+
+button#boutonAller,
+button#boutonRetour {
+	padding: 3px 20px 3px 20px; /* boutons plus larges */
+}
+
+div#bouton.cache {
+	opacity: 0; /* bouton invisible */
+}
+
+div#bouton.visible {
+	opacity: 1; /* bouton visible */
+}
+
+a#numeroDeCarte {
+	font-size: larger; /* texte plus grand */
+	margin: 0 8px 0 8px; /* marges horizontales */
+}
+
+button#boutonAller.selected,
+button#boutonRetour.selected {
+	background-color: #299cd1;  /* couleur différente quand sélectionné */
+}
+
+/*Carte d'embarquement*/
+
+section#containerCarte {
+	display: flex; /* disposition avec flexbox */
+	flex-direction: column; /* éléments en colonne */
+	justify-content: center; /* centrage vertical */
+	align-items: center; /* centrage horizontal */
+	text-align: left; /* texte aligné à gauche */
+}
+
+section.carteEmbarquement {
+	/*Toute la carte passager*/
+
+	background-color: #0d648d; /* Fond bleu pour la carte */
+	display: flex; /* Disposition avec flexbox */
+	flex-direction: row; /* Disposition des éléments en ligne */
+	border: 2px solid black; /* Bordure noire autour de la carte */
+	border-radius: 1rem; /* Bordures arrondies*/
+	gap: 5px; /*espace entre les deux parties de la carte*/
+	width: 600px; /* largeur fixe */
+}
+
+/*partie gauche passager*/
+
+article.partieGauche {
+	flex: 1; /* prend la moitié de la carte */
+	display: flex; /* disposition avec flexbox */
+	flex-direction: column; /* éléments en colonne */
+}
+
+article.partieGauche img {
+	background-color: white; /* fond blanc */
+	border: 1px solid black; /* bordures noires */
+	border-radius: 1rem; /* bords arrondis */
+	padding: 10px 0 10px 0; /* espace vertical */
+}
+
+/*partie droite passager*/
+
+article.partieDroite {
+	display: flex; /* disposition avec flexbox */
+	flex-direction: column; /* éléments en colonne */
+	margin: 0.3rem; /* marge interne */
+	flex: 1; /* prend la moitié de la carte */
+}
+
+article.partieDroite h2 {
+	color: white; /* cadre dans carte d'embarquement en blanc*/
+	text-align: center; /* texte centré*/
+	margin-bottom: 5px; /* espacer carte d'embarquement et l'encadré*/
+}
+
+article.encadrePartieDroite {
+	display: flex; /* disposition avec flexbox */
+	flex-direction: column; /* éléments en colonne */
+	background-color: white; /* fond blanc */
+	border: 1px solid black; /* bordures noires */
+	border-radius: 15px; /* bords arrondis */
+	justify-content: center; /* centre le contenu */
+	height: 100%; /* prend toute la hauteur */
+}
+
+div.texteDroiteHaut {
+	border-bottom: 1.5px solid black; border-bottom: 1.5px solid black; /* séparation horizontale */
+}
+
+div.texteDroiteHaut,
+div.texteDroiteBas {
+	display: flex; /* disposition avec flexbox */
+	flex-direction: column; /* éléments en colonne */
+}
+
+table.tabCarte td {
+	border: none; /* aucune bordure */
+	text-align: left; /* texte à gauche */
+	font-weight: bold; /* texte en gras */
+}
+
+article.encadrePartieDroite table.tabCarte td {
+	vertical-align: top; /*texte en haut des cellules*/
+	padding: 3px;  /* espace interne */
+}
+
+td.intituleCarte {
+	color: white; /* intitulés en blanc */
+}
+
+td.qrcodeimg {
+	display: flex; /* disposition avec flexbox */
+	justify-content: flex-end; /* pousse l'image à droite */
+	align-items: center; /* centre verticalement */
+}
+
+div.texteGauche table.tabCarte td:first-child {
+	width: 50%; /* première colonne du tableau plus large */
+}
+
+div.texteGauche td:last-child {
+	background-color: white; /* fond blanc */
+	border-radius: 45px; /* bords arrondis */
+	padding-left: 10px; /* espace à gauche */
+}
+
+@media screen and (max-width: 768px) {
+
+	/* side bar*/
+
+	header#sidebar {
+		min-width: 50%; /* largeur min 70% */
+	}
+
+	/* Carte d'embarquement */
+
+	section.carteEmbarquement {
+        width: 100%; /* carte en pleine largeur */
+		display: flex; /* disposition avec flexbox */
+        flex-direction: column; /* empile les parties */
+		gap: 5px; /* espace entre les blocs */
+		align-items: stretch; /* largeur maximale */
+    }
+
+	article.partieGauche table.tabCarte {
+		width: 100%; /* tableau pleine largeur */
+	}
+
+
+	article.partieDroite {
+		width: 98%; /* légère marge pour que l'encadré passe */
+	}
+
+	div.recherche input{
+		width: 50%; /* largeur réduite */
+	}
+
+	section#containerFacture.ouvert {
+		width : 100%; /* facture responsive */
+	}
+}
+
+/*Tableau de bord*/
+
+div.rechercheTableauDeBord {
+	background-color: #0d648d; /* fond bleu */
+	border-radius: 40px; /* bords arrondis */
+	display: flex; /* disposition avec flexbox */
+	flex-direction: row; /* éléments en ligne */
+	align-items: center; /* centrage vertical */
+	justify-content: space-around; /* espace entre éléments */
+	gap: 5px; /* espacement */
+	padding: 4px; /* padding */
+}
+
+input#date-select {
+	flex: 1;
+	border-radius: 0px 40px 40px 0px; /* bords arrondis */
+}
+
+select#liaison-select {
+	border-radius: 40px 0px 0px 40px; /* bords arrondis */
+	flex: 1; /* largeur flexible */
+	padding: 8px; /* padding interne */
+	background-color: white; /* fond blanc */
+}
+
+table.taux {
+	background-color: white; /* fond blanc */
+	border: 1px solid black; /* bordures noires */
+	text-align: center; /* texte centré */
+	width: 100%; /* largeur totale */
+	border-collapse: collapse; /* éviter les doublons de bordures */
+}
+
+table.taux th, table.taux td {
+	border: 0.5px solid black; /* bordures noires */
+}
+
+table.taux th {
+	background-color: #0d648d; /* fond bleu */
+	color: white; /* texte blanc */
+}
+
+.remplissage.vert {
+	background-color: #85b886; /* taux faible */
+}
+
+.remplissage.orange {
+	background-color: rgb(255, 191, 71); /* taux moyen */
+}
+
+.remplissage.rouge {
+	background-color: rgb(201, 16, 16); /* taux élevé */
+}
+
+.remplissage.jaune {
+	background-color: #ffff00; /* taux très élevé */
+}
+
+/*Statistiques*/
+
+div.rechercheStatistiques {
+	background-color: #0d648d; /* fond bleu */
+	width: 100%; /* pleine largeur */
+	padding: 5px; /* padding */
+	border-radius: 40px; /* bords arrondis */
+}
+
+select#liaison-select-stats {
+	border-radius: 40px; /* bords arrondis */
+	padding: 8px; /* padding interne */
+	background-color: white; /* fond blanc */
+	width: 100%; /* largeur totale */
+}
+
+table.chiffreAffaire {
+	background-color: white; /* fond blanc */
+	border: 1px solid black; /* bordures noires */
+	text-align: center; /* texte centré */
+	width: 100%; /* largeur totale */
+	border-collapse: collapse; /* éviter les doublons de bordures */
+}
+
+table.chiffreAffaire th,
+td {
+	border: 0.5px solid black; /* bordures noires */
+	padding: 8px; /* espace interne */
+}
+
+table.chiffreAffaire th {
+	background-color: #0d648d; /* fond bleu */
+	color: white; /* texte blanc */
+}
+
+img#gifConfettis {
+	position: absolute; /*au dessus du reste contenu dans la div*/
+	top: 0; /* gif en haut de la div*/
+    left: 0; /* gif a gauche de la div*/
+    width: 100%; /* couvre toute l'image */
+    height: 100%; /* couvre toute l'image */
+}
+
+div#equipage{
+	position: relative; /* nécessaire pour positionner le GIF par-dessus */
+}
